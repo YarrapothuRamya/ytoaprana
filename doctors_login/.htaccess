@@ -1,0 +1,17 @@
+RewriteEngine On
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#Down For Maintenance Page Redirect
+#RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}/maintenance.html [R=307,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+Options -Indexes
+ErrorDocument 403 /dashboard
+ErrorDocument 404 /
+ErrorDocument 500 /dashboard

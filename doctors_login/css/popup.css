@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:999;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+	width: auto !important;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	transition: all 1s ease-in-out;
+	margin-top:60px;
+}
+.popup table{
+	width:auto;
+	min-width:30%
+	max-width:80%;
+}
+
+.popup h2 {
+  margin: 0 0 10px 0;
+  color:#FF0000;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
